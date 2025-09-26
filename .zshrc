@@ -10,9 +10,6 @@ export ZSH=/Users/anhthang/.oh-my-zsh
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 eval "$(starship init zsh)"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir node_version vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status kubecontext root_indicator background_jobs history time)
-
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -67,12 +64,11 @@ plugins=(
   autojump
   brew
   helm
-  kops
   kubectl
   gitignore
   zsh-autosuggestions
   zsh-syntax-highlighting
-  you-should-use
+  zsh-you-should-use
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -108,20 +104,10 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-function brewlist() {
-    if tput setaf 1 &> /dev/null; then
-        reset=$(tput sgr0);
-        blue=$(tput setaf 33);
-    else
-        reset="\e[0m";
-        blue="\e[1;34m";
-    fi;
-    brew leaves | while read bfile; do brew desc $bfile; echo -n "$blue     ->"; brew deps $bfile | awk '{printf(" %s ", $0)}'; echo "$reset"; done
-}
-
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias gdf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-# git alias
+# git aliases
 alias main='git checkout main'
 alias master='git checkout master'
 alias dev='git checkout develop'
@@ -137,12 +123,8 @@ alias branch='git branch'
 alias add='git add .'
 alias prune='git fetch --prune'
 alias diff='git diff'
+
+# other aliases
 alias clean-merged='git branch --merged | grep -v \* | xargs git branch -D'
 alias nuxt-rebuild='rm -rf node_modules; rm -rf .nuxt; rm yarn.lock; yarn'
 alias npm-rebuild='rm -rf node_modules; rm package-lock.json; npm i'
-
-# other alias
-alias ktail='kubectl logs -f --tail=100'
-
-export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
-export GEM_HOME="$HOME/.gem"
