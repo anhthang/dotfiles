@@ -1,0 +1,12 @@
+# command = "/bin/zsh"
+
+# cursor settings
+cursor-style = bar
+cursor-style-blink = false
+adjust-cursor-thickness = 20%
+
+# other settings
+theme = Catppuccin Macchiato
+# theme = dark:Catppuccin Macchiato,light:Catppuccin Latte
+
+copy-on-select = clipboard
