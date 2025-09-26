@@ -146,5 +146,3 @@ alias ktail='kubectl logs -f --tail=100'
 
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 export GEM_HOME="$HOME/.gem"
-
-#alias code='code-insiders'
