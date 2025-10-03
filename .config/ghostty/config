@@ -1,12 +1,17 @@
-# command = "/bin/zsh"
+# Shell and general settings
+command = "/bin/zsh"
+# macos-icon = paper
 
-# cursor settings
+# Cursor appearance settings
 cursor-style = bar
 cursor-style-blink = false
 adjust-cursor-thickness = 20%
 
-# other settings
+# Appearance and theme settings
+title = Kasper 👻
 theme = Catppuccin Macchiato
 # theme = dark:Catppuccin Macchiato,light:Catppuccin Latte
+font-family = Reddit Mono
 
+# Clipboard settings
 copy-on-select = clipboard
