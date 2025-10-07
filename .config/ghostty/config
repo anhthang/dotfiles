@@ -13,5 +13,8 @@ theme = Catppuccin Macchiato
 # theme = dark:Catppuccin Macchiato,light:Catppuccin Latte
 font-family = Reddit Mono
 
+window-padding-x = 10
+window-padding-y = 10
+
 # Clipboard settings
 copy-on-select = clipboard
