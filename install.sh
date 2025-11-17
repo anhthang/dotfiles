@@ -55,6 +55,16 @@ install_plugin "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosugge
 install_plugin "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 install_plugin "zsh-you-should-use" "https://github.com/MichaelAquilina/zsh-you-should-use"
 
+# Install Bun
+if ! command -v bun >/dev/null 2>&1; then
+  info "Bun not found. Installing..."
+  curl -fsSL https://bun.sh/install | bash || error "Bun installation failed."
+  success "Bun installed."
+  warn "You may need to restart your terminal for the 'bun' command to be available in your PATH."
+else
+  success "Bun already installed."
+fi
+
 # Install brew packages if Brewfile exists
 BREWFILE="$HOME/Brewfile"
 if [ -f "$BREWFILE" ]; then

@@ -75,6 +75,13 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# bun completions
+[ -s "/Users/anhthang/.bun/_bun" ] && source "/Users/anhthang/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 export NPM_BIN_PATH=$HOME/.npm/bin
 export PATH=$NPM_BIN_PATH:$PATH
@@ -126,5 +133,6 @@ alias diff='git diff'
 
 # other aliases
 alias clean-merged='git branch --merged | grep -v \* | xargs git branch -D'
-alias nuxt-rebuild='rm -rf node_modules; rm -rf .nuxt; rm yarn.lock; yarn'
+# alias nuxt-rebuild='rm -rf node_modules; rm -rf .nuxt; rm yarn.lock; yarn'
+alias bun-rebuild='rm -rf node_modules; rm -rf .nuxt; rm bun.lock; bun install'
 alias npm-rebuild='rm -rf node_modules; rm package-lock.json; npm i'
