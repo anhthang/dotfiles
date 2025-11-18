@@ -1,5 +1,6 @@
 tap "koekeishiya/formulae"
 brew "autojump"
+brew "difftastic"
 brew "fastfetch"
 brew "gh"
 brew "git"
