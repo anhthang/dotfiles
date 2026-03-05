@@ -1,3 +1,5 @@
+auto-update-channel = tip
+
 # Shell and general settings
 command = "/bin/zsh"
 # macos-icon = paper
