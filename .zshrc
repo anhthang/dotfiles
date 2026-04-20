@@ -61,7 +61,6 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  autojump
   brew
   helm
   kubectl
@@ -69,6 +68,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-you-should-use
+  zoxide
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -95,6 +95,9 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nano'
 fi
+
+# zoxide
+# eval "$(zoxide init zsh)"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
