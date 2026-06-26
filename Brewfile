@@ -1,5 +1,5 @@
+tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "homebrew/services"
-tap "koekeishiya/formulae"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Diff that understands syntax
@@ -35,7 +35,7 @@ brew "uv"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai", trusted: true
+brew "asmvik/formulae/yabai", trusted: true
 vscode "aaron-bond.better-comments"
 vscode "antfu.file-nesting"
 vscode "bibhasdn.unique-lines"
