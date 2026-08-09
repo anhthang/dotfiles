@@ -1,5 +1,5 @@
 tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
-tap "homebrew/services"
+tap "hashicorp/tap"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Diff that understands syntax
@@ -16,6 +16,8 @@ brew "python@3.14"
 brew "httpie"
 # Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Extremely fast Python linter, written in Rust
@@ -34,8 +36,8 @@ brew "typos-cli"
 brew "uv"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# A tiling window manager for macOS based on binary space partitioning.
-brew "asmvik/formulae/yabai", trusted: true
+# Terraform
+brew "hashicorp/tap/terraform", trusted: true
 vscode "aaron-bond.better-comments"
 vscode "antfu.file-nesting"
 vscode "bibhasdn.unique-lines"
@@ -50,6 +52,7 @@ vscode "dotjoshjohnson.xml"
 vscode "dracula-theme.theme-dracula"
 vscode "esbenp.prettier-vscode"
 vscode "github.vscode-github-actions"
+vscode "hashicorp.terraform"
 vscode "khaeransori.json2csv"
 vscode "mechatroner.rainbow-csv"
 vscode "mohsen1.prettify-json"
@@ -62,10 +65,4 @@ vscode "postman.postman-for-vscode"
 vscode "tamasfe.even-better-toml"
 vscode "vue.volar"
 vscode "wix.vscode-import-cost"
-npm "@vscode/vsce"
-npm "fastify-cli"
-npm "firebase-tools"
-npm "gatsby-cli"
-npm "json-server"
-npm "nodemon"
 npm "npm-check-updates"

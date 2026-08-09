@@ -65,6 +65,7 @@ plugins=(
   helm
   kubectl
   gitignore
+  terraform
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-you-should-use
