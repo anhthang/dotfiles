@@ -36,6 +36,8 @@ brew "typos-cli"
 brew "uv"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# A tiling window manager for macOS based on binary space partitioning.
+brew "asmvik/formulae/yabai", trusted: true
 # Terraform
 brew "hashicorp/tap/terraform", trusted: true
 vscode "aaron-bond.better-comments"

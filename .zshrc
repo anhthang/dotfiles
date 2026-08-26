@@ -117,6 +117,7 @@ fi
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias gdf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias cat='bat'
 
 # git aliases
 alias main='git checkout main'
@@ -140,5 +141,5 @@ alias clean-merged='git branch --merged | grep -v \* | xargs git branch -D'
 # alias nuxt-rebuild='rm -rf node_modules; rm -rf .nuxt; rm yarn.lock; yarn'
 alias bun-rebuild='rm -rf node_modules; rm -rf .nuxt; rm bun.lock; bun install'
 alias npm-rebuild='rm -rf node_modules; rm package-lock.json; npm i'
-export PATH="/opt/homebrew/opt/python@3.14/bin:$PATH"
+
 export PATH="/opt/homebrew/opt/python@3.14/bin:$PATH"
