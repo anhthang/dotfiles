@@ -1,6 +1,5 @@
 tap "asmvik/formulae", "https://github.com/asmvik/homebrew-formulae.git"
 tap "hashicorp/tap"
-tap "homebrew/services"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Diff that understands syntax
@@ -73,8 +72,6 @@ vscode "vue.volar"
 vscode "wix.vscode-import-cost"
 npm "@vscode/vsce"
 npm "fastify-cli"
-npm "firebase-tools"
-npm "gatsby-cli"
 npm "json-server"
 npm "nodemon"
 npm "npm-check-updates"
