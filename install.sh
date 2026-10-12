@@ -67,7 +67,7 @@ else
 fi
 
 # Install brew packages if Brewfile exists
-BREWFILE="$DOTFILES_DIR/Brewfile"
+BREWFILE="$DOTFILES_DIR/home/.Brewfile"
 if [ -f "$BREWFILE" ]; then
   info "Installing packages from Brewfile..."
   brew bundle --file="$BREWFILE" || warn "Some brew bundle items may have failed."

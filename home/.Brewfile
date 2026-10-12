@@ -45,6 +45,7 @@ brew "asmvik/formulae/yabai", trusted: true
 brew "hashicorp/tap/terraform", trusted: true
 vscode "aaron-bond.better-comments"
 vscode "antfu.file-nesting"
+vscode "anthropic.claude-code"
 vscode "bibhasdn.unique-lines"
 vscode "buianhthang.xml2json"
 vscode "catppuccin.catppuccin-vsc"

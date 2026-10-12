@@ -12,9 +12,9 @@ dotfiles/
 │   ├── .zshrc
 │   ├── .gitconfig
 │   ├── .yabairc
+│   ├── .Brewfile  # Homebrew packages (brew bundle --global)
 │   ├── .claude/CLAUDE.md
 │   └── .config/   # bat, fastfetch, ghostty, starship
-├── Brewfile       # Homebrew packages (brew bundle)
 ├── install.sh     # bootstrap a new machine
 └── com.googlecode.iterm2.plist
 ```
@@ -29,7 +29,7 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-`install.sh` installs Homebrew, Oh My Zsh and its plugins, Bun, the packages in the `Brewfile` (including `stow`), and then links `home/` into `$HOME`.
+`install.sh` installs Homebrew, Oh My Zsh and its plugins, Bun, the packages in `home/.Brewfile` (including `stow`), and then links `home/` into `$HOME`.
 
 If a real file already exists where a symlink should go, Stow refuses to overwrite it. Either remove that file, or adopt it into the repo and review the difference:
 
@@ -47,6 +47,15 @@ cd ~/dotfiles   # or: dotfiles status
 git status
 git commit -am "feat(zsh): add alias"
 git push
+```
+
+### Update Homebrew packages
+
+`~/.Brewfile` is the global Brewfile, so `brew bundle` works from any directory with `--global`:
+
+```bash
+brew bundle --global                 # install everything listed
+brew bundle dump --global --force    # save what's installed now
 ```
 
 ### Track a new file
