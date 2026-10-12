@@ -24,8 +24,8 @@ Only `home/` is stowed. Everything else stays in the repo.
 ## Set up a new machine
 
 ```bash
-git clone git@github.com:anhthang/dotfiles.git ~/Workspace/dotfiles
-cd ~/Workspace/dotfiles
+git clone git@github.com:anhthang/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ./install.sh
 ```
 
@@ -34,8 +34,8 @@ cd ~/Workspace/dotfiles
 If a real file already exists where a symlink should go, Stow refuses to overwrite it. Either remove that file, or adopt it into the repo and review the difference:
 
 ```bash
-stow --dir ~/Workspace/dotfiles --target ~ --no-folding --adopt home
-git -C ~/Workspace/dotfiles diff
+stow --dir ~/dotfiles --target ~ --no-folding --adopt home
+git -C ~/dotfiles diff
 ```
 
 ## Daily use
@@ -43,7 +43,7 @@ git -C ~/Workspace/dotfiles diff
 Edit files either in the repo or through the symlinks in `~` (they point to the same file), then commit from the repo:
 
 ```bash
-cd ~/Workspace/dotfiles   # or: dotfiles status
+cd ~/dotfiles   # or: dotfiles status
 git status
 git commit -am "feat(zsh): add alias"
 git push
@@ -56,7 +56,7 @@ Move it into `home/` at the same relative path, then restow:
 ```bash
 mkdir -p home/.config/foo
 mv ~/.config/foo/config home/.config/foo/config
-stow --dir ~/Workspace/dotfiles --target ~ --no-folding --restow home
+stow --dir ~/dotfiles --target ~ --no-folding --restow home
 ```
 
 `--no-folding` makes Stow link individual files instead of whole directories, so apps can still write their own files into `~/.config/...` without them ending up in the repo.
