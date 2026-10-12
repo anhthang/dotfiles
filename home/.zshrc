@@ -115,8 +115,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias gdf='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+export DOTFILES="$HOME/Workspace/dotfiles"
+alias dotfiles='git -C "$DOTFILES"'
+alias gdf='git -C "$DOTFILES"'
 alias cat='bat'
 
 # git aliases

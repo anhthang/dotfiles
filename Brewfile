@@ -25,6 +25,8 @@ brew "ripgrep"
 brew "ruff"
 # Cross-shell prompt for astronauts
 brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
 # Text interface for Git repositories
 brew "tig"
 # Simplified and community-driven man pages

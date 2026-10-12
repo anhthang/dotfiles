@@ -14,6 +14,7 @@ warn()    { echo "${YELLOW}⚠️  $1${RESET}"; }
 error()   { echo "${RED}❌ $1${RESET}" >&2; exit 1; }
 
 ZSH_CUSTOM=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}
+DOTFILES_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Install Homebrew
 if ! command -v brew >/dev/null 2>&1; then
@@ -66,7 +67,7 @@ else
 fi
 
 # Install brew packages if Brewfile exists
-BREWFILE="$HOME/Brewfile"
+BREWFILE="$DOTFILES_DIR/Brewfile"
 if [ -f "$BREWFILE" ]; then
   info "Installing packages from Brewfile..."
   brew bundle --file="$BREWFILE" || warn "Some brew bundle items may have failed."
@@ -75,13 +76,14 @@ else
   warn "No Brewfile found at $BREWFILE, skipping brew bundle."
 fi
 
-# Example: symlink dotfiles with stow if available
-# if command -v stow >/dev/null 2>&1; then
-#   info "Linking dotfiles with stow..."
-#   stow zsh git nvim || warn "Some stow symlinks may have failed."
-#   success "Dotfiles linked."
-# else
-#   warn "stow not installed, skipping symlink step."
-# fi
+# Symlink dotfiles from home/ into $HOME
+if command -v stow >/dev/null 2>&1; then
+  info "Linking dotfiles with stow..."
+  stow --dir="$DOTFILES_DIR" --target="$HOME" --no-folding --restow home \
+    || warn "Some stow symlinks failed (existing files in the way?)."
+  success "Dotfiles linked."
+else
+  warn "stow not installed, skipping symlink step."
+fi
 
 success "All done! 🎉"
