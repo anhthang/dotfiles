@@ -42,6 +42,8 @@ brew "zoxide"
 brew "asmvik/formulae/yabai", trusted: true
 # Terraform
 brew "hashicorp/tap/terraform", trusted: true
+# Terminal-based AI coding assistant
+cask "claude-code"
 vscode "aaron-bond.better-comments"
 vscode "antfu.file-nesting"
 vscode "anthropic.claude-code"
