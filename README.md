@@ -13,7 +13,7 @@ dotfiles/
 │   ├── .gitconfig
 │   ├── .yabairc
 │   ├── .Brewfile  # Homebrew packages (brew bundle --global)
-│   ├── .claude/CLAUDE.md
+│   ├── .claude/   # CLAUDE.md and skills/
 │   └── .config/   # bat, fastfetch, ghostty, starship
 ├── install.sh     # bootstrap a new machine
 └── com.googlecode.iterm2.plist
