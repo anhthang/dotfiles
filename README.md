@@ -13,7 +13,7 @@ dotfiles/
 │   ├── .gitconfig
 │   ├── .yabairc
 │   ├── .Brewfile  # Homebrew packages (brew bundle --global)
-│   ├── .claude/   # CLAUDE.md and skills/
+│   ├── .claude/   # CLAUDE.md (skills come from anhthang/skills)
 │   └── .config/   # bat, fastfetch, ghostty, starship
 ├── install.sh     # bootstrap a new machine
 └── com.googlecode.iterm2.plist
@@ -29,7 +29,7 @@ cd ~/dotfiles
 ./install.sh
 ```
 
-`install.sh` installs Homebrew, Oh My Zsh and its plugins, Bun, the packages in `home/.Brewfile` (including `stow`), and then links `home/` into `$HOME`.
+`install.sh` installs Homebrew, Oh My Zsh and its plugins, Bun, the packages in `home/.Brewfile` (including `stow`), links `home/` into `$HOME`, and then installs the agent skills from [anhthang/skills](https://github.com/anhthang/skills) for Claude Code.
 
 If a real file already exists where a symlink should go, Stow refuses to overwrite it. Either remove that file, or adopt it into the repo and review the difference:
 
@@ -56,6 +56,14 @@ git push
 ```bash
 brew bundle --global                 # install everything listed
 brew bundle dump --global --force    # save what's installed now
+```
+
+### Update agent skills
+
+The skills live in [anhthang/skills](https://github.com/anhthang/skills), not here. Edit them there, push, then update each machine:
+
+```bash
+npx skills update -g
 ```
 
 ### Track a new file

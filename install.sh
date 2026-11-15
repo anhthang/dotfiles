@@ -86,4 +86,14 @@ else
   warn "stow not installed, skipping symlink step."
 fi
 
+# Install agent skills from anhthang/skills (https://skills.sh/anhthang/skills)
+if command -v npx >/dev/null 2>&1; then
+  info "Installing agent skills..."
+  npx -y skills add anhthang/skills --skill '*' -g -a claude-code -y \
+    || warn "Agent skills installation failed."
+  success "Agent skills installed."
+else
+  warn "npx not found, skipping agent skills."
+fi
+
 success "All done! 🎉"
