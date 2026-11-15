@@ -1,5 +1,5 @@
 ---
-name: raycast-store
+name: raycast-publish
 description: Publish a Raycast extension to the Raycast Store and pull store changes back with a linear git history. Use when publishing (`npm run publish`, `ray publish`), updating or cleaning up a store pull request in raycast/extensions, or running `ray pull-contributions`, in any of my Raycast extension repositories.
 ---
 
@@ -13,7 +13,7 @@ Never run `npm run publish` or `npx ray pull-contributions` unless I ask, and ne
 
 - `npm run publish` and `npx ray pull-contributions` need the Ray CLI's GitHub token: the `GithubAccessToken` key in `~/.config/raycast/config.json` (never print it; the `Token` key next to it is the Raycast sign-in from `npx ray login`, which doesn't help here), or a `GITHUB_ACCESS_TOKEN` environment variable. `~/.config/raycast/public-extensions-fork` is the CLI's clone, which the first command on a machine creates. Check the key is set before running either; when it is, run them yourself.
 - Never let the Ray CLI fetch that token itself. When `GithubAccessToken` is missing, the first `pull-contributions` or `publish` on a machine starts GitHub's device login, which needs Enter pressed in a real terminal and crashes in your shell. Ask me instead to run that command myself in Terminal or iTerm (not through `!`), approve the one-time code on github.com, and tell you when it finished; then carry on from its result (after a pull, from the undo, before anything moves `ORIG_HEAD`). The same goes for a command that fails with an authorization error or an HTTP 400 while "getting fork", for a shell that can't reach `~/.config/raycast` or GitHub (sandboxed, remote or cloud), and for the prompt to discard an interrupted earlier attempt.
-- First time in a repository: when its `CLAUDE.md` doesn't point to this skill yet, add a line that does ("Publishing and pulling store changes: follow the maintainer's personal `raycast-store` skill"); `AGENTS.md` needs a "Publishing" section only for what differs from this skill. When it has no `__raycast_latest_publish_ext/<name>__` tag, the pull starts its branch from the repository's first commit, so the diff also shows everything since then: compare file by file, and set the tag on `main` afterwards.
+- First time in a repository: when its `CLAUDE.md` doesn't point to this skill yet, add a line that does ("Publishing and pulling store changes: follow the maintainer's personal `raycast-publish` skill"), or update one that still names the old `raycast-store`; `AGENTS.md` needs a "Publishing" section only for what differs from this skill. When it has no `__raycast_latest_publish_ext/<name>__` tag, the pull starts its branch from the repository's first commit, so the diff also shows everything since then: compare file by file, and set the tag on `main` afterwards.
 
 ## Order for each release
 
